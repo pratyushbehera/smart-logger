@@ -7,3 +7,9 @@
 - Initial release of the smart logger.
 - Support for Node.js and browser environments.
 - Multiple log levels, customizable formats.
+
+## [1.0.1] - 2025-02-28
+
+### Added
+
+- Update package name to @beherapratyush/logger

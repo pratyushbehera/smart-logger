@@ -1,5 +1,5 @@
 {
-  "name": "smart-logger",
+  "name": "@beherapratyush/logger",
   "version": "1.0.0",
   "description": "A customizable logging utility for Node.js and browser environments.",
   "main": "./dist/smart-logger.js",

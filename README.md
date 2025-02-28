@@ -1,8 +1,8 @@
 # Smart Logger
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Version](https://img.shields.io/npm/v/smart-logger)
-![Downloads](https://img.shields.io/npm/dm/smart-logger)
+![Version](https://img.shields.io/npm/v/@beherapratyush/logger)
+![Downloads](https://img.shields.io/npm/dm/@beherapratyush/logger)
 
 A lightweight and customizable logger for both **browser** and **Node.js** environments. Supports log levels (`debug`, `info`, `warn`, `error`) and colored output.
 
@@ -18,13 +18,13 @@ A lightweight and customizable logger for both **browser** and **Node.js** envir
 Install the package via npm:
 
 ```bash
-npm install smart-logger
+npm install @beherapratyush/logger
 ```
 
 Or via yarn:
 
 ```bash
-yarn add smart-logger
+yarn add @beherapratyush/logger
 ```
 
 ---
