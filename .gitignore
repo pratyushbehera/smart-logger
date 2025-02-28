@@ -1,0 +1,11 @@
+# Dependency directories
+node_modules/
+
+# Build files
+dist/
+
+# OS files
+.DS_Store
+
+#Coverage
+coverage

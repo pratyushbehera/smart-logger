@@ -1,0 +1,42 @@
+{
+  "name": "smart-logger",
+  "version": "1.0.0",
+  "description": "A customizable logging utility for Node.js and browser environments.",
+  "main": "./dist/smart-logger.js",
+  "browser": "./dist/smart-logger.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "logger",
+    "logging",
+    "node",
+    "browser",
+    "chalk",
+    "json",
+    "structured-logging"
+  ],
+  "author": "Pratyush pratyushbehera@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^10.0.0",
+    "jest": "^27.5.1",
+    "terser-webpack-plugin": "^5.3.12",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

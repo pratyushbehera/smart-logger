@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logger Test</title>
+  <script src="../dist/smart-logger.js"></script>
+  <script>
+    const logger = new SmartLogger({ logLevel: 'debug' });
+
+    logger.debug('This is a debug message');
+    logger.info('This is an info message');
+    logger.warn('This is a warning message');
+    logger.error('This is an error message');
+  </script>
+</head>
+<body>
+  <h1>Check the console for logs!</h1>
+</body>
+</html>
