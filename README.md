@@ -34,7 +34,7 @@ yarn add @beherapratyush/logger
 ### Basic Usage
 
 ```javascript
-import SmartLogger from "smart-logger";
+import SmartLogger from "@beherapratyush/logger";
 
 // Create a logger instance
 const logger = new SmartLogger({ logLevel: "info" });
@@ -86,7 +86,7 @@ Creates a new logger instance.
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logger Test</title>
-    <script src="https://unpkg.com/smart-logger/dist/smart-logger.js"></script>
+    <script src="https://unpkg.com/@beherapratyush/logger/dist/smart-logger.js"></script>
     <script>
       const logger = new SmartLogger({ logLevel: "debug" });
 
@@ -105,7 +105,7 @@ Creates a new logger instance.
 ### Node Example
 
 ```
-const SmartLogger = require('smart-logger');
+const SmartLogger = require('@beherapratyush/logger');
 const logger = new SmartLogger({ logLevel: 'warn' });
 
 logger.debug('This is a debug message'); // Won't log
