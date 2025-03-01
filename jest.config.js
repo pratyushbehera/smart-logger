@@ -3,7 +3,7 @@ module.exports = {
   coverageDirectory: "coverage", // Folder for coverage reports
   collectCoverage: true, // Enable coverage collection
   collectCoverageFrom: [
-    "src/logger.js", // Include the main logger file
+    "src/logger.ts", // Include the main logger file
     "!**/node_modules/**", // Exclude node_modules
     "!**/tests/**", // Exclude the tests folder
   ],

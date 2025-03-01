@@ -1,10 +1,10 @@
-const SmartLogger = require("../src/logger"); // Import the logger
+const Logger = require("../src/logger"); // Import the logger
 
-describe("SmartLogger", () => {
+describe("Logger", () => {
   let logger;
 
   beforeEach(() => {
-    logger = new SmartLogger({ logLevel: "info" });
+    logger = new Logger({ logLevel: "info" });
   });
 
   test("should log info messages when logLevel is info", () => {

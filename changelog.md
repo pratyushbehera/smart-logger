@@ -12,4 +12,14 @@
 
 ### Added
 
-- Update package name to @beherapratyush/logger
+- Update package name to `@beherapratyush/logger`
+
+## [1.0.3] - 2025-03-01
+
+### Added
+
+- Added new log level `trace`
+
+### Updated
+
+- Update package name to `custom-log-js`

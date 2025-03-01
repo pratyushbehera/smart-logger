@@ -5,8 +5,8 @@ module.exports = {
   entry: "./src/logger.js", // Entry point of your package
   output: {
     path: path.resolve(__dirname, "dist"), // Output directory
-    filename: "smart-logger.js", // Output file name
-    library: "SmartLogger", // Expose the library globally
+    filename: "logger.js", // Output file name
+    library: "Logger", // Expose the library globally
     libraryTarget: "umd", // Universal Module Definition (works for CommonJS, AMD, and as a global variable)
     globalObject: "this", // Ensures compatibility with both browser and Node.js
   },

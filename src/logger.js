@@ -1,9 +1,9 @@
-class SmartLogger {
+class Logger {
   constructor(options = {}) {
     this.logLevel = options.logLevel || "info"; // Default log level
     this.isBrowser =
       typeof window !== "undefined" && typeof window.document !== "undefined";
-    this.logLevels = ["debug", "info", "warn", "error"];
+    this.logLevels = ["trace", "debug", "info", "warn", "error"]; // Added "trace"
   }
 
   setLogLevel(level) {
@@ -25,23 +25,29 @@ class SmartLogger {
     if (this.isBrowser) {
       // Browser environment
       const colors = {
-        debug: "color: gray;",
-        info: "color: blue;",
-        warn: "color: orange;",
-        error: "color: red;",
+        trace: "color: #9a6ee1; font-weight: bold;", // Purple for trace
+        debug: "color: #666; font-style: italic;", // Gray for debug
+        info: "color: #007bff; font-weight: bold;", // Blue for info
+        warn: "color: #ff9800; font-weight: bold;", // Orange for warn
+        error: "color: #ff0000; font-weight: bold;", // Red for error
       };
       console.log(`%c${formattedMessage}`, colors[level], ...args);
     } else {
       // Node.js environment
       const colors = {
-        debug: "\x1b[90m", // Gray
-        info: "\x1b[34m", // Blue
-        warn: "\x1b[33m", // Yellow
-        error: "\x1b[31m", // Red
+        trace: "\x1b[35m", // Purple for trace
+        debug: "\x1b[90m", // Gray for debug
+        info: "\x1b[34m", // Blue for info
+        warn: "\x1b[33m", // Yellow for warn
+        error: "\x1b[31m", // Red for error
       };
       const resetColor = "\x1b[0m";
       console.log(`${colors[level]}${formattedMessage}${resetColor}`, ...args);
     }
+  }
+
+  trace(message, ...args) {
+    this.log("trace", message, ...args);
   }
 
   debug(message, ...args) {
@@ -62,4 +68,4 @@ class SmartLogger {
 }
 
 // Export the logger
-module.exports = SmartLogger;
+module.exports = Logger;

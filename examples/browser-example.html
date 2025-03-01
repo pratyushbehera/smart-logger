@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Logger Test</title>
-  <script src="../dist/smart-logger.js"></script>
+  <script src="../dist/logger.js"></script>
   <script>
-    const logger = new SmartLogger({ logLevel: 'debug' });
+    const logger = new Logger({ logLevel: 'trace' });
 
+    logger.trace('This is a trace message');
     logger.debug('This is a debug message');
     logger.info('This is an info message');
     logger.warn('This is a warning message');

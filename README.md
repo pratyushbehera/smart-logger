@@ -1,8 +1,8 @@
 # Smart Logger
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
-![Version](https://img.shields.io/npm/v/@beherapratyush/logger)
-![Downloads](https://img.shields.io/npm/dm/@beherapratyush/logger)
+![Version](https://img.shields.io/npm/v/custom-log-js)
+![Downloads](https://img.shields.io/npm/dm/custom-log-js)
 
 A lightweight and customizable logger for both **browser** and **Node.js** environments. Supports log levels (`debug`, `info`, `warn`, `error`) and colored output.
 
@@ -18,13 +18,13 @@ A lightweight and customizable logger for both **browser** and **Node.js** envir
 Install the package via npm:
 
 ```bash
-npm install @beherapratyush/logger
+npm install custom-log-js
 ```
 
 Or via yarn:
 
 ```bash
-yarn add @beherapratyush/logger
+yarn add custom-log-js
 ```
 
 ---
@@ -34,10 +34,10 @@ yarn add @beherapratyush/logger
 ### Basic Usage
 
 ```javascript
-import SmartLogger from "@beherapratyush/logger";
+const Logger = require("custom-log-js");
 
 // Create a logger instance
-const logger = new SmartLogger({ logLevel: "info" });
+const logger = new Logger({ logLevel: "info" });
 
 // Log messages
 logger.debug("This is a debug message"); // Won't log (logLevel is 'info')
@@ -59,7 +59,7 @@ logger.debug("This is a debug message"); // Will log
 
 ## Smart Logger Instance
 
-### `new SmartLogger(options)`
+### `new Logger(options)`
 
 Creates a new logger instance.
 
@@ -86,9 +86,9 @@ Creates a new logger instance.
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logger Test</title>
-    <script src="https://unpkg.com/@beherapratyush/logger/dist/smart-logger.js"></script>
+    <script src="https://unpkg.com/custom-log-js/dist/logger.js"></script>
     <script>
-      const logger = new SmartLogger({ logLevel: "debug" });
+      const logger = new Logger({ logLevel: "debug" });
 
       logger.debug("This is a debug message");
       logger.info("This is an info message");
@@ -104,9 +104,9 @@ Creates a new logger instance.
 
 ### Node Example
 
-```
-const SmartLogger = require('@beherapratyush/logger');
-const logger = new SmartLogger({ logLevel: 'warn' });
+```bash
+const Logger = require('custom-log-js');
+const logger = new Logger({ logLevel: 'warn' });
 
 logger.debug('This is a debug message'); // Won't log
 logger.info('This is an info message'); // Won't log
@@ -129,13 +129,13 @@ cd smart-logger
 
 #### 2. Install dependencies:
 
-```
+```bash
 npm install
 ```
 
 #### 3. Build the package:
 
-```
+```bash
 npm run build
 ```
 
