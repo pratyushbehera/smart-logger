@@ -4,7 +4,7 @@
 ![Version](https://img.shields.io/npm/v/custom-log-js)
 ![Downloads](https://img.shields.io/npm/dm/custom-log-js)
 
-A lightweight and customizable logger for both **browser** and **Node.js** environments. Supports log levels (`debug`, `info`, `warn`, `error`) and colored output.
+A lightweight and customizable logger for both **browser** and **Node.js** environments. Supports log levels (`trace`,`debug`, `info`, `warn`, `error`) and colored output.
 
 ## Features
 
@@ -40,6 +40,7 @@ const Logger = require("custom-log-js");
 const logger = new Logger({ logLevel: "info" });
 
 // Log messages
+logger.trace("This is a tarce message"); // Won't log (logLevel is 'info')
 logger.debug("This is a debug message"); // Won't log (logLevel is 'info')
 logger.info("This is an info message"); // Will log
 logger.warn("This is a warning message"); // Will log
@@ -65,10 +66,11 @@ Creates a new logger instance.
 
 - **options** (Object):
   - `logLevel` (String): Minimum log level to display. Default: `'info'`.
-  - Possible values: `'debug'`, `'info'`, `'warn'`, `'error'`.
+  - Possible values: `'trace'`, `'debug'`, `'info'`, `'warn'`, `'error'`.
 
 ### Methods
 
+- `logger.trace(message, ...args)`: Logs a trace message.
 - `logger.debug(message, ...args)`: Logs a debug message.
 - `logger.info(message, ...args)`: Logs an info message.
 - `logger.warn(message, ...args)`: Logs a warning message.
@@ -90,6 +92,7 @@ Creates a new logger instance.
     <script>
       const logger = new Logger({ logLevel: "debug" });
 
+      logger.trace("This is a trace message");
       logger.debug("This is a debug message");
       logger.info("This is an info message");
       logger.warn("This is a warning message");
@@ -108,6 +111,7 @@ Creates a new logger instance.
 const Logger = require('custom-log-js');
 const logger = new Logger({ logLevel: 'warn' });
 
+logger.trace('This is a trace message'); // Won't log
 logger.debug('This is a debug message'); // Won't log
 logger.info('This is an info message'); // Won't log
 logger.warn('This is a warning message'); // Will log
