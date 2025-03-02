@@ -1,6 +1,6 @@
 {
   "name": "custom-log-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A customizable logging utility for Node.js and browser environments.",
   "main": "./dist/logger.js",
   "browser": "./dist/logger.js",
