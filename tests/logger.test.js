@@ -43,6 +43,28 @@ describe("Logger", () => {
     consoleSpy.mockRestore();
   });
 
+  describe("stringifyIfObject", () => {
+    test("should log objects in a readable format", () => {
+      const consoleSpy = jest.spyOn(console, "log");
+      logger.setLogLevel("debug");
+      const user = { name: "John Doe", age: 30 };
+      logger.debug("User details:", user);
+
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("[DEBUG] User details:"),
+        expect.stringContaining(JSON.stringify(user, null, 2))
+      );
+    });
+
+    test("should log non-object messages as-is", () => {
+      const consoleSpy = jest.spyOn(console, "log");
+      logger.info("This is a simple message");
+      expect(consoleSpy).toHaveBeenCalledWith(
+        expect.stringContaining("[INFO] This is a simple message")
+      );
+    });
+  });
+
   describe("setLogLevel", () => {
     test("should update logLevel when a valid level is provided", () => {
       logger.setLogLevel("debug");

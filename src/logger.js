@@ -14,13 +14,23 @@ class Logger {
     }
   }
 
+  // Helper function to stringify objects
+  stringifyIfObject(data) {
+    if (typeof data === "object" && data !== null) {
+      return JSON.stringify(data, null, 2); // Pretty-print with 2-space indentation
+    }
+    return data; // Return as-is if not an object
+  }
+
   log(level, message, ...args) {
     if (this.logLevels.indexOf(level) < this.logLevels.indexOf(this.logLevel)) {
       return; // Skip if the log level is below the set level
     }
 
     const timestamp = new Date().toISOString();
-    const formattedMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+    const formattedMessage = `[${timestamp}] [${level.toUpperCase()}] ${this.stringifyIfObject(
+      message
+    )}`;
 
     if (this.isBrowser) {
       // Browser environment
@@ -31,7 +41,11 @@ class Logger {
         warn: "color: #ff9800; font-weight: bold;", // Orange for warn
         error: "color: #ff0000; font-weight: bold;", // Red for error
       };
-      console.log(`%c${formattedMessage}`, colors[level], ...args);
+      console.log(
+        `%c${formattedMessage}`,
+        colors[level],
+        ...args.map(this.stringifyIfObject)
+      );
     } else {
       // Node.js environment
       const colors = {
@@ -42,7 +56,10 @@ class Logger {
         error: "\x1b[31m", // Red for error
       };
       const resetColor = "\x1b[0m";
-      console.log(`${colors[level]}${formattedMessage}${resetColor}`, ...args);
+      console.log(
+        `${colors[level]}${formattedMessage}${resetColor}`,
+        ...args.map(this.stringifyIfObject)
+      );
     }
   }
 
