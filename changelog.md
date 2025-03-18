@@ -23,3 +23,9 @@
 ### Updated
 
 - Update package name to `custom-log-js`
+
+## [1.0.4] - 2025-03-18
+
+### Added
+
+- Added support to print Objects in user friendly way.
